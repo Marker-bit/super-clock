@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      <p className="bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 p-8 rounded-3xl font-black text-9xl overflow-hidden transition-all cursor-default">
+      <p className="bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 p-8 rounded-3xl font-black text-9xl overflow-hidden transition-all cursor-default max-sm:max-w-full">
         <div className="flex -space-x-1">
           {time
             .toLocaleTimeString()
