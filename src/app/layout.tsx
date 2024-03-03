@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={cn(inter.className, "transition-all")}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
