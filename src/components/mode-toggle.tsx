@@ -56,25 +56,26 @@ export function ModeToggle({
             className="rounded-xl p-2 w-fit h-fit hover:bg-black/5 dark:hover:bg-white/5 transition-all text-black/70 dark:text-white/80 hover:text-black dark:hover:text-white"
             onClick={() => changeTheme()}
           >
-            <AnimatePresence mode="wait">
-              {theme === "light" ? (
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  exit={{ scale: 0 }}
-                >
-                  <Sun className="w-4 h-4" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  exit={{ scale: 0 }}
-                >
-                  <Moon className="w-4 h-4" />
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {theme === "light" && (
+              <motion.div
+                initial={{ rotate: 180, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -180 }}
+                transition={{ type: "spring" }}
+              >
+                <Sun className="w-4 h-4" />
+              </motion.div>
+            )}
+            {theme === "dark" && (
+              <motion.div
+                initial={{ rotate: 180, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -180 }}
+                transition={{ type: "spring" }}
+              >
+                <Moon className="w-4 h-4" />
+              </motion.div>
+            )}
           </button>
         </TooltipTrigger>
         <TooltipContent>

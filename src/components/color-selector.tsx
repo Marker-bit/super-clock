@@ -165,7 +165,10 @@ function ColorButton({
 }) {
   return (
     <button
-      className={cn("w-6 h-6 rounded-md hover:scale-105 transition-transform cursor-pointer", current && "scale-125 hover:scale-125")}
+      className={cn(
+        "w-6 h-6 rounded-md hover:scale-105 transition-all cursor-pointer active:w-5",
+        current && "w-10 active:w-11"
+      )}
       style={{ backgroundColor: color }}
       onClick={onClick}
     />
@@ -199,7 +202,7 @@ export function ColorSelector({
   ];
   const chosenColors = isDark ? colors : darkColors;
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 items-center">
       {chosenColors.map((color) => (
         <ColorButton
           key={color}
